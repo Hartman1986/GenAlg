@@ -1,12 +1,7 @@
 ﻿using GenAlg.Enums;
-using GenAlg.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GenAlg.Entites
 {
@@ -24,12 +19,20 @@ namespace GenAlg.Entites
         public int X
         {
             get => x;
-            set { x = value; OnPropertyChanged("X"); }
+            set {
+                if (value < 0) throw new ArgumentOutOfRangeException("Х не может быть меньше 0");
+                x = value; 
+                OnPropertyChanged("X"); 
+            }
         }
         public int Y
         {
             get => y;
-            set { y = value; OnPropertyChanged("Y"); }
+            set {
+                if (value < 0) throw new ArgumentOutOfRangeException("Y не может быть меньше 0");
+                y = value; 
+                OnPropertyChanged("Y"); 
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

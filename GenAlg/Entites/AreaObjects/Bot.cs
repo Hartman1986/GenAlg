@@ -1,15 +1,11 @@
 ﻿using GenAlg.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GenAlg.Entites.AreaObjects
 {
     public class Bot : AreaObj
     {
-        
+        public event Action<MoveDirection, Bot> IWantMove;
         public Bot()
         {
             Type = TypeOfAreaObj.Bot;

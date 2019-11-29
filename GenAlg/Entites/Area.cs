@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GenAlg.Entites.AreaObjects;
-using System.ComponentModel;
 
 namespace GenAlg.Entites
 {/// <summary>
@@ -40,10 +36,19 @@ namespace GenAlg.Entites
             else { throw new InvalidOperationException("Невозможно добавить объект по заданным координатам. Ячейка не пуста"); }
 
             base.Add(areaObj);
+            
+            if(areaObj is Bot)
+            {
+                Bot bot = areaObj as Bot;
+                bot.IWantMove += Bot_IWantMove;
+            }
 
             
         }
 
-        
+        private void Bot_IWantMove(Enums.MoveDirection moveDirection, Bot sender)
+        {
+            
+        }
     }
 }
