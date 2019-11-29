@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace GenAlg.Entites.AreaObjects
 {
-    public class Food : IAreaObject
+    public class Food : AreaObj
     {
-        public TypeOfAreaObj Type => TypeOfAreaObj.Food;
-
-        public int X { get; set; }
-        public int Y { get; set; }
+        public Food()
+        {
+            Type = TypeOfAreaObj.Food;
+        }
     }
 }

@@ -2,17 +2,19 @@
 using GenAlg.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GenAlg.Entites.AreaObjects
 {
-    public class Wall : IAreaObject
+    public class Wall : AreaObj
     {
-        public TypeOfAreaObj Type => TypeOfAreaObj.Wall;
-
-        public int X { get; set; }
-        public int Y { get; set; }
+        public Wall()
+        {
+            Type = TypeOfAreaObj.Wall;
+        }
     }
 }
