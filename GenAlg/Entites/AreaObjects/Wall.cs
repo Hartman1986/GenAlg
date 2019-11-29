@@ -12,6 +12,7 @@ namespace GenAlg.Entites.AreaObjects
     {
         public TypeOfAreaObj Type => TypeOfAreaObj.Wall;
 
-        public Coordinates Position { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
     }
 }

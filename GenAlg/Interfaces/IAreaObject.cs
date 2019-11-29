@@ -20,7 +20,8 @@ namespace GenAlg.Interfaces
         /// <summary>
         /// Координаты существующего объекта
         /// </summary>
-        public Coordinates Position { get; set; }
-        
+        public int X { get; set; }
+        public int Y { get; set; }
+
     }
 }

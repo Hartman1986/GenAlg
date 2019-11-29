@@ -12,7 +12,6 @@ namespace GenAlg.Enums
     /// </summary>
     public enum TypeOfAreaObj
     {
-        Empty = 0,
         Bot,
         Wall,
         Food
