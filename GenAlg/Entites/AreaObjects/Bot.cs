@@ -5,12 +5,19 @@ namespace GenAlg.Entites.AreaObjects
 {
     public class Bot : AreaObj
     {
+        public AreaObj LookingAt { get; set; }
         public event Action<MoveDirection, Bot> IWantMove;
+        public event Action<Bot> Die;
         public Bot()
         {
             Type = TypeOfAreaObj.Bot;
         }
 
+        
+        public void Look(MoveDirection md)
+        {
+
+        }
         public void Move(MoveDirection md)
         {
             switch (md)

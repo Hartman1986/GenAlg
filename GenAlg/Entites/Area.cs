@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using GenAlg.Entites.AreaObjects;
+using GenAlg.Enums;
 
 namespace GenAlg.Entites
 {/// <summary>
@@ -40,15 +41,24 @@ namespace GenAlg.Entites
             if(areaObj is Bot)
             {
                 Bot bot = areaObj as Bot;
-                bot.IWantMove += Bot_IWantMove;
+                bot.IWantMove += BotMove;
             }
 
             
         }
 
-        private void Bot_IWantMove(Enums.MoveDirection moveDirection, Bot sender)
+        private void BotMove(MoveDirection moveDirection, Bot sender)
         {
-            
+            if (moveDirection == MoveDirection.Right || moveDirection == MoveDirection.RightDown || moveDirection == MoveDirection.RightUp)
+            {
+                if (sender.X > SizeX - 1) return;
+            }
+            if (moveDirection == MoveDirection.Down || moveDirection == MoveDirection.LeftDown || moveDirection == MoveDirection.RightDown)
+            {
+                if (sender.Y > SizeY - 1) return;
+            }
+
+            sender.Move(moveDirection);
         }
     }
 }
